@@ -20,6 +20,17 @@ android {
             debuggable false
         }
     }
+    signingConfigs {
+        release {
+            storeFile file("android.jks")
+            storePassword "123456"
+            keyAlias "Konda"
+            keyPassword "123456"
+        }
+    }
+    if (project.hasProperty('Konda')) {
+        android.signingConfigs.release.keyAlias = keyAlias
+    }
    
 }
 
