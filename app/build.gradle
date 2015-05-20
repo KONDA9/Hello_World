@@ -11,15 +11,6 @@ android {
         versionCode 1
         versionName "1.0"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            debuggable false
-        }
-    }
     signingConfigs {
         release {
             storeFile file("android.jks")
@@ -28,9 +19,18 @@ android {
             keyPassword "123456"
         }
     }
-    if (project.hasProperty('Konda')) {
-        android.signingConfigs.release.keyAlias = keyAlias
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            debuggable false
+        }
     }
+    
+    
    
 }
 
