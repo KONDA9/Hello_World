@@ -15,7 +15,7 @@ android {
         release {
             storeFile file("android.jks")
             storePassword "123456"
-            keyAlias "Konda"
+            keyAlias "konda"
             keyPassword "123456"
         }
     }
