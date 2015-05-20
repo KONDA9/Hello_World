@@ -13,7 +13,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file("C:\\Users\\bkondaiah\\Desktop\\Certificate")
+            storeFile file("android.jks")
             storePassword "123456"
             keyAlias "Konda"
             keyPassword "123456"
